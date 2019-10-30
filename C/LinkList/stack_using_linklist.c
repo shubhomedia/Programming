@@ -84,3 +84,24 @@ void push(int element)
     size++;
     printf("Data pushed to stack.\n");
 };
+
+int pop()
+{
+    int data = 0;
+    struct stack * topNode;
+
+    if (size <= 0 || !top)
+    {
+        printf("Stack is empty.\n");
+        return INT_MIN;
+    }
+    topNode = top;
+
+    data = top->data;
+    top = top->next;
+
+    free(topNode);
+    size--;
+    return data;
+};
+
