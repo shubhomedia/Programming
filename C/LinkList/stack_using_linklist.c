@@ -105,3 +105,22 @@ int pop()
     return data;
 };
 
+
+void display()
+{
+    struct stack* temp;
+
+    if (top == NULL) {
+        printf("Stack Underflow");
+        exit(1);
+    }
+    else {
+        temp = top;
+        while (temp != NULL) {
+            printf("Data :%d\n",temp->data);
+            temp = temp->next;
+        }
+    }
+};
+
+
