@@ -153,5 +153,16 @@ int largestElement(struct stack * head)
     printf("Highest  Value is: %d\n",max);
 }
 
+int smallestElement(struct stack * head)
+{
+    int min = INT_MAX;
+    while(head!=NULL){
+        if(min>head->data)
+            min=head->data;
+        head=head->next;
+    }
+    printf("Lowest Value is: %d\n",min);
+}
+
 
 
