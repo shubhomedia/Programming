@@ -142,4 +142,16 @@ void display()
 };
 
 
+int largestElement(struct stack * head)
+{
+    int max = INT_MIN;
+    while(head!=NULL){
+        if(max<head->data)
+            max=head->data;
+        head=head->next;
+    }
+    printf("Highest  Value is: %d\n",max);
+}
+
+
 
