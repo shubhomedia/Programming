@@ -68,3 +68,19 @@ void menu(){
             exit(0);
     };
 };
+void push(int element)
+{
+    if (size >= CAPACITY)
+    {
+        printf("Stack Overflow, No Space to add more element in stack.\n");
+        return ;
+    }
+    struct stack * newNode = (struct stack *) malloc(sizeof(struct stack));
+
+    newNode->data = element;
+    newNode->next = top;
+
+    top = newNode;
+    size++;
+    printf("Data pushed to stack.\n");
+};
