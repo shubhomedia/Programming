@@ -18,7 +18,11 @@ int main(){
     insert_head(&head,elements);
     printf("After Head data Add\n");
     show_linklist();
-
+    printf("Enter Your First data, want to add End \n");
+    scanf("%d",&elements);
+    insert_end(&head,elements);
+    printf("After end data Add\n");
+    show_linklist();
 
 };
 
@@ -59,5 +63,28 @@ void insert_head(struct node ** head_ref,int new_element){
     new_node->data = new_element;
     new_node->next = head;
     head = new_node;
+};
+
+void insert_end(struct node ** head_ref,int new_element){
+    struct node * new_node;
+    struct node * temp;
+    new_node =(struct node *)malloc(sizeof(struct node));
+
+    temp= *head_ref;
+    new_node->data = new_element;
+    new_node->next = NULL;
+    if(*head_ref == NULL)
+        {
+        *head_ref = new_node;
+        return;
+    }
+    else{
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next=new_node;
+        return;
+
+    }
 };
 
