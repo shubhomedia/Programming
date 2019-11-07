@@ -23,6 +23,14 @@ int main()
     scanf("%d",&element);
     push(element);
     display();
+    printf("Enter your data:");
+    scanf("%d",&element);
+    push(element);
+    display();
+    pop();
+    printf("After pop data\n");
+    display();
+
 
 
 
@@ -60,4 +68,24 @@ void display()
             temp = temp->next;
         }
     }
+};
+
+int pop()
+{
+    int data = 0;
+    struct stack * topNode;
+
+    if (size <= 0 || !top)
+    {
+        printf("Stack is empty.\n");
+        return INT_MIN;
+    }
+    topNode = top;
+
+    data = top->data;
+    top = top->next;
+
+    free(topNode);
+    size--;
+    return data;
 };
