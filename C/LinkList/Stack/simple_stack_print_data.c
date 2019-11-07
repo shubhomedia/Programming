@@ -30,6 +30,10 @@ int main()
     pop();
     printf("After pop data\n");
     display();
+    pop();
+    printf("After pop data\n");
+    display();
+
 
 
 
