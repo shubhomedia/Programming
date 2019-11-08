@@ -146,3 +146,19 @@ void display()
         }
     }
 };
+
+
+void search(struct node * top, int x)
+{
+    struct node * current = top;
+    while (current != NULL)
+    {
+        if (current->data == x){
+            printf("Found on Stack\n");
+            return 0;
+        }
+        current = current->next;
+    }
+    printf("Not Found on Stack\n");
+    return 0;
+}
