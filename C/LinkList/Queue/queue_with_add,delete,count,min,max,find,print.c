@@ -89,3 +89,17 @@ void enqueue(int element)
     tail=temp;
     size++;
 };
+
+void dequeue(){
+
+    struct node * temp = front;
+    if(front == NULL)
+        return;
+
+    if(front==tail){
+        front=tail=NULL;
+    }
+    front=front->next;
+    free(temp);
+    size--;
+};
