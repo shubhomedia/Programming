@@ -126,3 +126,23 @@ int smallestElement(struct node * head)
     }
     printf("Lowest Value is: %d\n",min);
 }
+
+
+void display()
+{
+    struct node * temp;
+
+    if (front == NULL) {
+        printf("Stack Underflow");
+        return;
+    }
+    else {
+        int size=1;
+        temp = front;
+        while (temp != NULL) {
+            printf("Data %d :%d\n",size,temp->data);
+            temp = temp->next;
+            size++;
+        }
+    }
+};
