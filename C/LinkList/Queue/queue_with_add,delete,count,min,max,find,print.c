@@ -67,3 +67,25 @@ void menu(){
             exit(0);
     };
 };
+
+void enqueue(int element)
+{
+    if (size >= CAPACITY)
+    {
+        printf("Queue is Full, No Space to add more element in Queue.\n");
+        return ;
+    }
+    struct node * temp = (struct node *) malloc(sizeof(struct node));
+
+
+    temp->data = element;
+    temp->next = NULL;
+    if(front == NULL && tail == NULL)
+    {
+        front=tail=temp;
+        printf("Data Enqueue to Queue.\n");
+    }
+    tail->next=temp;
+    tail=temp;
+    size++;
+};
