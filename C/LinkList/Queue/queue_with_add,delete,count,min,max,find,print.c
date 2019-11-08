@@ -114,3 +114,15 @@ int largestElement(struct node * head)
     }
     printf("Highest  Value is: %d\n",max);
 }
+
+
+int smallestElement(struct node * head)
+{
+    int min = INT_MAX;
+    while(head!=NULL){
+        if(min>head->data)
+            min=head->data;
+        head=head->next;
+    }
+    printf("Lowest Value is: %d\n",min);
+}
