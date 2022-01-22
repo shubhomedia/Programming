@@ -7,12 +7,12 @@ int main()
     scanf("%d",&n);
     if(n >= 0)
     {
-        printf("The Number is Positive\n");
+        printf("Note: The Number is Positive\n");
     }
     else
     {
         printf("The Number is Negative\n");
     }
     return 0;
-
+	
 }
